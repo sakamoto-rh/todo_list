@@ -1,0 +1,13 @@
+<%= form_for Todo.new do |f| %>
+<table>
+  <tr>
+    <th><%= Todo.human_attribute_name(:body) %></th>
+    <td><%= f.text_field :body %></td>
+  </tr>
+  <tr>
+    <th><%= Todo.human_attribute_name(:deadline_at) %></th>
+    <td><%= f.text_field :deadline_at%></td>
+  </tr>
+</table>
+<%= f.submit %>
+<% end %>

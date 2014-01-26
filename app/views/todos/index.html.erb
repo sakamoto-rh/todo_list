@@ -1,0 +1,19 @@
+<h3>TODO list</h3>
+<% @todos.each do |todo|%>
+<table>
+  <thead>
+    <tr>
+      <th><%= Todo.human_attribute_name(:body) %></th>
+      <th><%= Todo.human_attribute_name(:deadline_at) %></th>
+    </tr>
+  </thead>
+  <tr>
+    <td><%= f.text_field :body %></td>
+    <td><%= f.text_field :deadline_at%></td>
+  </tr>
+</table>
+<% end %>
+
+<hr />
+
+<%= render "create" %>
