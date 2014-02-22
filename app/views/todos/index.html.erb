@@ -1,19 +1,22 @@
 <h3>TODO list</h3>
-<% @todos.each do |todo|%>
-<table>
+<%= render "create" %>
+<hr />
+<table class="table table-striped">
   <thead>
     <tr>
       <th><%= Todo.human_attribute_name(:body) %></th>
       <th><%= Todo.human_attribute_name(:deadline_at) %></th>
+      <th></th>
     </tr>
   </thead>
-  <tr>
-    <td><%= f.text_field :body %></td>
-    <td><%= f.text_field :deadline_at%></td>
-  </tr>
+  <tbody>
+  <% @todos.each do |todo|%>
+    <tr>
+       <td><%= todo.body %></td>
+       <td><%= todo.deadline_at%></td>
+       <td><%= link_to '完了！', todo_path(todo), class: "btn btn-success", method: :delete %></td>
+     </tr>
+  <% end %>
+  </tbody>
 </table>
-<% end %>
-
 <hr />
-
-<%= render "create" %>
